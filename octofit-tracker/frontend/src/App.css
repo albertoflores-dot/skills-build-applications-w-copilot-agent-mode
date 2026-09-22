@@ -182,3 +182,264 @@
     border-right-color: var(--border);
   }
 }
+
+.app-shell {
+  min-height: 100vh;
+  background: #f7f5ef;
+  color: #203038;
+  text-align: left;
+}
+
+.app-header,
+.app-nav,
+.app-content {
+  width: min(1100px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 48px 0 30px;
+  border-bottom: 1px solid #d9d5c9;
+}
+
+.app-header h1,
+.section-heading h2,
+.overview h2 {
+  margin: 6px 0 0;
+  color: #203038;
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  letter-spacing: -0.04em;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #d45d3f;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.status-dot {
+  color: #2a7666;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.status-dot::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #2a9d8f;
+}
+
+.app-nav {
+  display: flex;
+  gap: 24px;
+  padding: 18px 0;
+  overflow-x: auto;
+  border-bottom: 1px solid #d9d5c9;
+}
+
+.app-nav a {
+  color: #657276;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.app-nav a.active,
+.app-nav a:hover {
+  color: #d45d3f;
+}
+
+.app-content {
+  padding: 68px 0 100px;
+}
+
+.overview {
+  max-width: 720px;
+}
+
+.overview .lead {
+  max-width: 510px;
+  margin-top: 22px;
+  color: #657276;
+  font-size: 1.15rem;
+}
+
+.overview-grid,
+.team-grid,
+.user-grid,
+.workout-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 42px;
+}
+
+.overview-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.overview-link,
+.team-card,
+.user-card,
+.workout-card {
+  border: 1px solid #d9d5c9;
+  background: #fffdf8;
+  color: #203038;
+}
+
+.overview-link {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px;
+  color: #203038;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.overview-link span {
+  color: #d45d3f;
+  font-size: 1.4rem;
+}
+
+.data-section {
+  animation: rise-in 350ms ease-out both;
+}
+
+.section-heading {
+  margin-bottom: 34px;
+}
+
+.muted,
+.team-card p,
+.user-card p,
+.workout-card p {
+  color: #657276;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-border-color: #d9d5c9;
+  color: #203038;
+}
+
+.table th {
+  color: #657276;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-grid,
+.user-grid,
+.workout-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.team-card,
+.user-card,
+.workout-card {
+  position: relative;
+  padding: 24px;
+}
+
+.team-card h3,
+.user-card h3,
+.workout-card h3 {
+  margin: 12px 0 7px;
+  font-size: 1.1rem;
+}
+
+.team-card p,
+.user-card p,
+.workout-card p {
+  margin: 0 0 18px;
+  font-size: 0.9rem;
+}
+
+.team-swatch {
+  display: block;
+  width: 34px;
+  height: 6px;
+}
+
+.avatar {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1b24a;
+  color: #203038;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-card h3 {
+  margin-top: 0;
+}
+
+.user-card p {
+  margin-bottom: 0;
+}
+
+.leaderboard-list {
+  max-width: 760px;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 19px 0;
+  border-bottom: 1px solid #d9d5c9;
+}
+
+.rank {
+  color: #d45d3f;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.member-name {
+  font-weight: 700;
+}
+
+.workout-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #d45d3f;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  .app-header { align-items: start; flex-direction: column; gap: 18px; }
+  .app-header, .app-nav, .app-content { width: min(100% - 28px, 1100px); }
+  .app-content { padding-top: 46px; }
+  .overview-grid, .team-grid, .user-grid, .workout-grid { grid-template-columns: 1fr; }
+}
