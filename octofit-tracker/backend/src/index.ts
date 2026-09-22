@@ -14,7 +14,7 @@ const resources = { users: User, teams: Team, activities: Activity, leaderboard:
 app.use(express.json())
 
 app.get('/api/health', (_request, response) => {
-  response.json({ status: 'ok', service: 'octofit-tracker-backend', baseUrl })
+  response.json({ status: 'ok', service: 'octofit-tracker-backend', port, baseUrl })
 })
 
 app.get('/api/config', (_request, response) => {
