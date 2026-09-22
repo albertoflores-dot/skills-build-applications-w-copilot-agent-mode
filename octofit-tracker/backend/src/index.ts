@@ -1,13 +1,9 @@
 import express from 'express'
 import { connectDatabase } from './config/database.js'
 import { Activity, Leaderboard, Team, User, Workout } from './models.js'
+import { baseUrl, port } from './server.js'
 
 const app = express()
-const port = Number(process.env.PORT || 8000)
-const codespaceName = process.env.CODESPACE_NAME
-const baseUrl = codespaceName
-  ? `https://${codespaceName}-8000.app.github.dev`
-  : `http://localhost:${port}`
 
 const resources = { users: User, teams: Team, activities: Activity, leaderboard: Leaderboard, workouts: Workout }
 
